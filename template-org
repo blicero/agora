@@ -1,0 +1,9 @@
+# -*- mode: org; fill-column: 78; -*-
+# Time-stamp: <2023-12-16 22:19:43 krylon>
+#
+#+TAGS: internals(i) ui(u) bug(b) feature(f)
+#+TAGS: database(d) design(e), meditation(m)
+#+TAGS: optimize(o) refactor(r) cleanup(c)
+#+TODO: TODO(t)  RESEARCH(r) IMPLEMENT(i) TEST(e) | DONE(d) FAILED(f) CANCELLED(c)
+#+TODO: MEDITATE(m) PLANNING(p) | SUSPENDED(s)
+#+PRIORITIES: A G D
