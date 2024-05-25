@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Time-stamp: <2024-05-25 23:39:57 krylon>
+# Time-stamp: <2024-05-25 23:48:53 krylon>
 #
 # /data/code/python/agora/model.py
 # created on 25. 05. 2024
@@ -47,6 +47,14 @@ class Building(Identifiable):
     hp: int
     hp_max: int
     tags: set[str] = field(default_factory=set[str])
+
+    def has_tag(self, tag: str) -> bool:
+        """Return True if the Building is marked with the given tag."""
+        return tag.lower() in self.tags
+
+    def add_tag(self, tag: str) -> None:
+        """Add a tag to the Building."""
+        self.tags.add(tag.lower())
 
 
 @dataclass(slots=True, kw_only=True)

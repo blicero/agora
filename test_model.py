@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Time-stamp: <2024-05-25 23:36:25 krylon>
+# Time-stamp: <2024-05-25 23:56:06 krylon>
 #
 # /data/code/python/agora/test_model.py
 # created on 25. 05. 2024
@@ -50,7 +50,7 @@ class BuildingTest(unittest.TestCase):
         Fortunately, it's cheaper and quicker to do in software.
         """
         try:
-            b: Building = Building(  # pylint: disable-msg=E1123
+            b: Building = Building(
                 ID=42,
                 name="Bikeshed",
                 description="Where you put your bicycles",
@@ -62,6 +62,21 @@ class BuildingTest(unittest.TestCase):
             self.fail(msg)
 
         self.assertEqual(b.ID, 42)
+
+    def test_building_tag(self) -> None:
+        """Test tagging buildings."""
+        b: Building = Building(
+            ID=42,
+            name="Blast Furnace",
+            description="Turns oar into metal",
+            hp=150,
+            hp_max=150,
+        )
+
+        self.assertFalse(b.has_tag("industry"))
+        b.add_tag("industry")
+        self.assertTrue(b.has_tag("industry"))
+        self.assertTrue(b.has_tag("INDUSTRY"))
 
 # Local Variables: #
 # python-indent: 4 #
